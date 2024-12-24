@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <h2>json objects</h2>
+        <p id="result"></p>
+        <p id="result"></p>
+        <script>
+            var myObj = { name:"Riya",age:12,grade:7 };
+            var myJSON=JSON.stringify(myObj);
+            var newObj=JSON.parse(myJSON);
+            document.getElementById("result").innerHTML=newObj.name;
+
+            async function add(a,b) {
+                let response=await a+b;
+                display(response);
+            }
+            function display(some) {
+                document.getElementById("result").innerHTML=some;
+            }
+            add(5,10);
+            function myDisplayer(value) {
+                document.getElementById("result").innerHTML=value;
+            }
+            function myCalculator(num1,num2,myCallback) {
+                let sum=num1+num2;
+                myCallback(sum);
+            }
+            myCalculator(5,5,myDisplayer);
+        </script>
+    </body>
+</html>
